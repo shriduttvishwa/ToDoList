@@ -1,0 +1,26 @@
+<%- include("header") -%> <!-- including ejs for even incomplete codes for header
+    and footers as well -->
+
+  <div class="box" id="heading">
+    <!-- these are scriplet tags for implementing JS control flow statements into the HTML or Ejs file -->
+    <h1><%= listTitle %></h1>
+    <!-- kindOfDay is a variable marker for
+      the app.js to know where to place the code or the varibale-->
+    <!-- isnt working rn -->
+  </div>
+
+  <div class="box">
+    <% for(var i = 0; i < newListItems.length ; i++){ %>
+    <div class="item">
+      <input type="checkbox">
+      <p><%= newListItems[i].name %></p>
+    </div>
+    <% } %>
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" value="" placeholder="What's Next to add?" autocomplete="off">
+      <button type="submit" name="list" value = <%= listTitle %>> + </button>
+    </form>
+  </div>
+
+  <%- include("footer") -%>
